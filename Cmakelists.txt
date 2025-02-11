@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(Interpreter)
+include_directories(./)
+
+file(GLOB SRC_FILES "*.cpp")
+add_executable(Interpreter ${SRC_FILES})
+target_include_directories(Interpreter PRIVATE include)

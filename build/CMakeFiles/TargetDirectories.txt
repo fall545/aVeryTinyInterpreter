@@ -1,0 +1,3 @@
+/mnt/d/fall-main/gitub_project/aVeryTinyInterpreter/build/CMakeFiles/Interpreter.dir
+/mnt/d/fall-main/gitub_project/aVeryTinyInterpreter/build/CMakeFiles/edit_cache.dir
+/mnt/d/fall-main/gitub_project/aVeryTinyInterpreter/build/CMakeFiles/rebuild_cache.dir

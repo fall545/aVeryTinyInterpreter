@@ -1,5 +1,6 @@
 #include <TokenConsumer.h>
 #include <codegen.h>
+#include <memory>
 namespace Interpreter
 {
     class Parser
@@ -15,11 +16,11 @@ namespace Interpreter
         Parser();
         ~Parser();
 
-        int ProgramParser(TokenConsumer* tokenconsumer){}
+        int ProgramParser(std::unique_ptr<Interpreter::TokenConsumer>& tokenconsumer){}
 
-        int Statement(TokenConsumer* tokenconsumer){}
+        int Statement(std::unique_ptr<Interpreter::TokenConsumer>& tokenconsumer){}
 
-        int Statement_list(TokenConsumer* tokenconsumer){}
+        int Statement_list(std::unique_ptr<Interpreter::TokenConsumer>& tokenconsumer){}
     
     };
     

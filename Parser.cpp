@@ -7,13 +7,13 @@ Parser::~Parser()
 {
 }
     
-int Parser::ProgramParser(TokenConsumer* tokenconsumer){
+int Parser::ProgramParser(std::unique_ptr<Interpreter::TokenConsumer>& tokenconsumer){
     if(tokenconsumer->TokenBuff[0]=='\0')
     return -1;
     strcpy(ProgramName,tokenconsumer->TokenBuff);
     return 0;
 }
-int Parser::Statement(TokenConsumer* tokenconsumer){
+int Parser::Statement(std::unique_ptr<Interpreter::TokenConsumer>& tokenconsumer){
     if(tokenconsumer->TokenId==TURN){
         tokenconsumer->gettoken();
         if (tokenconsumer->TokenId!=NUMBER)
@@ -80,7 +80,7 @@ int Parser::Statement(TokenConsumer* tokenconsumer){
     return 0;
 }
 
-int Parser::Statement_list(TokenConsumer* tokenconsumer){
+int Parser::Statement_list(std::unique_ptr<Interpreter::TokenConsumer>& tokenconsumer){
     while (tokenconsumer->TokenId!=END)
     {
         Statement(tokenconsumer);

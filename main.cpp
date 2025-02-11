@@ -21,11 +21,12 @@ void TopLevelExpressionHandle(){
     }
 }
 int main(){
-
-    do (tokenconsumer->TokenId==Interpreter::SIGEOF)
+    std::cout<<"READY\n";
+    do 
     {
         TopLevelExpressionHandle();
-    }while(tokenconsumer->gettoken());
+        tokenconsumer->gettoken();
+    }while(tokenconsumer->TokenId==Interpreter::SIGEOF);
     
 
 }
