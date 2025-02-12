@@ -89,8 +89,7 @@ int Parser::Statement(unique_ptr<TokenConsumer>& tokenconsumer,unique_ptr<Codege
 
     return 0;
 }
-
-int Parser::Statement_list(unique_ptr<TokenConsumer>& tokenconsumer){
+int Parser::Statement_list(unique_ptr<TokenConsumer>& tokenconsumer,unique_ptr<TimesCodegen>& tokenconsumer){
     while (tokenconsumer->TokenId!=END)
     {
         unique_ptr<Codegen>& codegen = make_unique<TimesCodegen>();

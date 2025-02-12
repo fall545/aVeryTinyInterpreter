@@ -1,4 +1,5 @@
 #include <codegen.h>
+#include <Parser.h>
 using namespace Interpreter;
 
 string& ForwardCodegen::formcode(int f){
@@ -16,7 +17,12 @@ string& DegreesCodegen::formcode(int f){
     code.append(" degrees\n");
     return code;
 }
-// int TimesCodegen::formcode(){
+string& TimesCodegen::formcode(int f){
+    string tmp=code;
+    for (int i = 0; i < f; i++)
+    {
+        code+=tmp;
+    }
     
-//     return 0;
-// }
+    return code;
+}

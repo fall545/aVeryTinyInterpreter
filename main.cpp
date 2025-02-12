@@ -3,6 +3,7 @@
 #include <memory>
 std::unique_ptr<Interpreter::TokenConsumer> tokenconsumer=std::make_unique<Interpreter::TokenConsumer>();
 std::unique_ptr<Interpreter::Parser> parser=std::make_unique<Interpreter::Parser>();
+std::unique_ptr<Interpreter::Codegen> parser=std::make_unique<Interpreter::Codegen>();
 void TopLevelExpressionHandle(){
     tokenconsumer->gettoken();
     switch (tokenconsumer->TokenId)

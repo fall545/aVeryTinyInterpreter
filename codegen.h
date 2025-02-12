@@ -12,7 +12,7 @@ namespace Interpreter
         string code;
         Codegen(){};
         ~Codegen(){};
-        virtual int formcode(int f) = 0;
+        virtual string& formcode(int f) = 0;
         int codegen(){
             cout<<code;
         }
@@ -20,7 +20,7 @@ namespace Interpreter
     };
     
     
-    class ForwardCodegen:public Codegen
+    class ForwardCodegen:virtual public Codegen
     {
     private:
         int forward;
@@ -32,7 +32,7 @@ namespace Interpreter
         string& formcode(int f) override;
     };
     
-    class DegreesCodegen: public Codegen
+    class DegreesCodegen: virtual public Codegen
     {
     private:
         int degrees;
@@ -53,6 +53,7 @@ namespace Interpreter
         TimesCodegen(int d):times(d),DegreesCodegen(),ForwardCodegen(){}
         ~TimesCodegen(){};
         // int formcode() override;
+        string& formcode(int f) override;
     };
 
     
