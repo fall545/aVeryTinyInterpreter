@@ -71,7 +71,7 @@ int Parser::Statement(unique_ptr<TokenConsumer>& tokenconsumer,unique_ptr<Codege
             return -1;
         }
         // unique_ptr<Codegen> codegen = make_unique<TimesCodegen>(Times);
-        Codegen* codegen = new TimesCodegen(Times);
+        // Codegen* codegen = new TimesCodegen(Times);
         
 
 
