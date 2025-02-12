@@ -29,7 +29,7 @@ namespace Interpreter
         ForwardCodegen(){};
         // void getparameter(int f) override{forward=f;}
         ~ForwardCodegen(){};
-        int formcode(int f) override;
+        string& formcode(int f) override;
     };
     
     class DegreesCodegen: public Codegen
@@ -41,7 +41,7 @@ namespace Interpreter
         // void getparameter(int f) override{degrees=f;}
         DegreesCodegen(){}
         ~DegreesCodegen(){};
-        int formcode(int f) override;
+        string& formcode(int f) override;
 
     };
 

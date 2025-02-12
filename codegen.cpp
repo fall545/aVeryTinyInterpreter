@@ -1,20 +1,20 @@
 #include <codegen.h>
 using namespace Interpreter;
 
-int ForwardCodegen::formcode(int f){
+string& ForwardCodegen::formcode(int f){
     forward=f;
     code.append("Please move forward ");
     code.append(to_string(forward));
     code.append("\n");
-    return 0;
+    return code;
 }
 
-int DegreesCodegen::formcode(int f){
+string& DegreesCodegen::formcode(int f){
     degrees=f;
     code.append("Please turn ");
     code.append(to_string(degrees));
     code.append(" degrees\n");
-    return 0;
+    return code;
 }
 // int TimesCodegen::formcode(){
     
