@@ -20,18 +20,23 @@ int TokenConsumer::gettoken(){
     int cnt=0;
     char c;
     int i =0;
-    while (c=getchar() && c==' ');
+    // memset(TokenBuff, 0, sizeof(TokenBuff));  
+
+    while ((c=getchar() )==' ');
     do
     {
         if (c=='"') continue;
         TokenBuff[i++]=c;
-    } while (c=getchar() && c==' ');
+        c=getchar();
+    } while ( c!=' ' &&  c!='\n' && c!=EOF);
     TokenBuff[i]='\0';
     
     if (strcmp(TokenBuff, "program") == 0) {
         TokenId = PROGRAM;
+        // std::cout<<"ok";
     } else if (strcmp(TokenBuff, "begin") == 0) {
         TokenId = BEGIN;
+        // std::cout<<"ok";
     } else if (strcmp(TokenBuff, "end") == 0) {
         TokenId = END;
     } else if (strcmp(TokenBuff, "string") == 0) {
@@ -55,6 +60,10 @@ int TokenConsumer::gettoken(){
     else if(c==';'){
         TokenId = SEMICOLOM;
      }
+    else if(strcmp(TokenBuff, "//") == 0){
+        while ((c=getchar() )=='\n');
+        gettoken();
+    }
      else if(c==EOF){
         TokenId = SIGEOF;
         return 0;

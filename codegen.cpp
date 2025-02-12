@@ -1,35 +1,22 @@
 #include <codegen.h>
 using namespace Interpreter;
-Codegen::Codegen()
-{
+
+int ForwardCodegen::formcode(int f){
+    forward=f;
+    code.append("Please move forward ");
+    code.append(to_string(forward));
+    code.append("\n");
+    return 0;
 }
 
-Codegen::~Codegen()
-{
+int DegreesCodegen::formcode(int f){
+    degrees=f;
+    code.append("Please turn ");
+    code.append(to_string(degrees));
+    code.append(" degrees\n");
+    return 0;
 }
-
-
-ForwardCodegen::ForwardCodegen(int f):forward(f)
-{
-
-}
+// int TimesCodegen::formcode(){
     
-ForwardCodegen::~ForwardCodegen()
-{
-}
-int ForwardCodegen::codegen(){
-    std::cout<<"Please move forward "<<forward<<std::endl;
-    return 0;
-}
-
-DegreesCodegen::DegreesCodegen(int d):degrees(d)
-{
-}
-
-DegreesCodegen::~DegreesCodegen()
-{
-}
-int DegreesCodegen::codegen(){
-    std::cout<<"Please turn "<<degrees<<" degrees"<<std::endl;
-    return 0;
-}
+//     return 0;
+// }

@@ -1,0 +1,9 @@
+program "Sample"
+begin
+forward 20 ;
+times 3 do
+begin
+turn 108 degrees ;
+forward 10 ;
+end ;
+end

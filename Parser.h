@@ -1,3 +1,7 @@
+#ifndef PARSER_H
+#define PARSER_H
+
+
 #include <TokenConsumer.h>
 #include <codegen.h>
 #include <memory>
@@ -16,14 +20,16 @@ namespace Interpreter
         Parser();
         ~Parser();
 
-        int ProgramParser(std::unique_ptr<Interpreter::TokenConsumer>& tokenconsumer){}
+        int ProgramParser(std::unique_ptr<TokenConsumer>& tokenconsumer);
 
-        int Statement(std::unique_ptr<Interpreter::TokenConsumer>& tokenconsumer){}
+        int Statement(std::unique_ptr<TokenConsumer>& tokenconsumer,unique_ptr<Codegen>& codegen);
 
-        int Statement_list(std::unique_ptr<Interpreter::TokenConsumer>& tokenconsumer){}
+        int Statement_list(std::unique_ptr<TokenConsumer>& tokenconsumer);
     
     };
     
     
     
 } // namespace Interpreter
+
+#endif

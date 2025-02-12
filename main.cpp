@@ -11,13 +11,16 @@ void TopLevelExpressionHandle(){
     case Interpreter::DEGREES:
     case Interpreter::TIMES:
     case Interpreter::BEGIN:
+    case Interpreter::TURN:
         parser->Statement(tokenconsumer);
         break;
     
     case Interpreter::PROGRAM:
         parser->ProgramParser(tokenconsumer);
-    default:
         break;
+    default:
+        
+        std::cout<<"unknown error :"<< tokenconsumer->TokenBuff<<"\n";
     }
 }
 int main(){
@@ -26,7 +29,7 @@ int main(){
     {
         TopLevelExpressionHandle();
         tokenconsumer->gettoken();
-    }while(tokenconsumer->TokenId==Interpreter::SIGEOF);
+    }while(tokenconsumer->TokenId!=Interpreter::SIGEOF);
     
 
 }

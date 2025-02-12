@@ -1,3 +1,6 @@
+#ifndef TOKENCONSUMER_H
+#define TOKENCONSUMER_H
+
 #include <iostream>
 #include <string.h>
 
@@ -40,3 +43,5 @@ enum TokenIdentifier{
     };
 
 } // namespace Interpreter
+
+#endif
