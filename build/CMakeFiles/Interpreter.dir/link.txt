@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/Interpreter.dir/Parser.cpp.o CMakeFiles/Interpreter.dir/TokenConsumer.cpp.o CMakeFiles/Interpreter.dir/codegen.cpp.o CMakeFiles/Interpreter.dir/main.cpp.o -o Interpreter 
